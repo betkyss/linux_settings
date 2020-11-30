@@ -215,15 +215,15 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # resize window
 mode "resize" {
 				#Open resize mod
-        bindsym h resize shrink width 5 px or 5 ppt
-        bindsym j resize grow height 5 px or 5 ppt
-        bindsym k resize shrink height 5 px or 5 ppt
-        bindsym l resize grow width 5 px or 5 ppt
+        bindsym h resize shrink width 7 px or 7 ppt
+        bindsym j resize grow height 7 px or 7 ppt
+        bindsym k resize shrink height 7 px or 7 ppt
+        bindsym l resize grow width 7 px or 7 ppt
 				#--------------
-        bindsym Left resize shrink width 5 px or 5 ppt
-        bindsym Down resize grow height 5 px or 5 ppt
-        bindsym Up resize shrink height 5 px or 5 ppt
-        bindsym Right resize grow width 5 px or 5 ppt
+        bindsym Left resize shrink width 7 px or 7 ppt
+        bindsym Down resize grow height 7 px or 7 ppt
+        bindsym Up resize shrink height 7 px or 7 ppt
+        bindsym Right resize grow width 7 px or 7 ppt
 				#Open default mod
         bindsym Return mode "default"
         bindsym Escape mode "default"
