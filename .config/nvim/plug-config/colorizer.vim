@@ -1,0 +1,1 @@
+au filetype * :ColorizerAttachToBuffer

@@ -1,0 +1,68 @@
+
+URxvt.secondaryScreen: 1
+URxvt.secondaryScroll: 0
+URxvt.scrollBar: false
+URxvt.secondaryWheel: 1
+URxvt*font: xft:DejaVu Sans Mono:size=8
+URxvt.letterSpace: -1
+
+
+URxvt*.background: #002a36
+/* URxvt*.background: #262626 */
+URxvt*.foreground: #B0BEC5
+
+URxvt.internalBorder: none
+! black
+*color0: #002a35
+!color0: #262626
+*color8: #AFAFAF
+! red
+*color1: #FC3841
+*color9: #FC746D
+! green
+*color2: #5CF19E
+*color10: #ADF7BE
+! yellow
+*color3: #FED032
+*color11: #FEE16C
+! blue
+*color4: #5EB8E6
+*color12: #70CFFF
+! magenta
+*color5: #FC226E
+*color13: #FC669B
+! cyan
+*color6: #59FFD1
+*color14: #9AFFE6
+! white
+*color7: #FFFFFF
+*color15: #FFFFFF
+
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+
+URxvt.keysym.C-Delete: perl:matcher:last
+URxvt.keysym.M-Delete: perl:matcher:list
+
+URxvt.colorUL: #00968URxvt.perl-ext: default,url-select
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.url-select.launcher: /usr/bin/xdg-open
+URxvt.url-select.underline: true8
+
+/* URxvt.perl-ext-common: ...,tabbedex,... */
+/* URxvt.perl-ext-common: ...,tabbed,... */
+
+URxvt.tabbed.tabbar-fg: 8
+URxvt.tabbed.tabbar-bg: 0
+URxvt.tabbed.tab-fg: 0
+URxvt.tabbed.tab-bg: 8
+
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+/* URxvt.tabbed.autohide: false */
+/* URxvt.tabbed.reopen-on-close: yes */
+
+xterm*metaSendsEscape: true
+

@@ -1,0 +1,34 @@
+[Added Associations]
+x-scheme-handler/http=exo-web-browser.desktop;
+x-scheme-handler/https=exo-web-browser.desktop;
+application/x-desktop=lxshortcut.desktop;panel-desktop-handler.desktop;
+inode/blockdevice=pcmanfm.desktop;
+application/x-cd-image=gnome-disk-image-writer.desktop;gnome-disk-image-mounter.desktop;
+application/pdf=chromium.desktop;google-chrome.desktop;
+image/jpeg=org.gimp.GIMP.desktop;
+text/plain=sublime_text.desktop;emacs.desktop;
+image/png=feh.desktop;
+
+[Default Applications]
+video/mp4=vlc.desktop
+video/mp3=vlc.desktop
+x-scheme-handler/avocode=Avocode.desktop
+x-scheme-handler/avocode-sync=Avocode.desktop
+x-scheme-handler/http=chromium.desktop
+x-scheme-handler/https=chromium.desktop
+x-scheme-handler/about=chromium.desktop
+x-scheme-handler/unknown=chromium.desktop
+x-scheme-handler/etcher=balena-etcher-electron.desktop
+x-scheme-handler/figma=figma-linux.desktop
+
+application/x-directory=ranger.desktop
+inode/directory=ranger.desktop
+
+text/plain=nvim.desktop
+text/x-php=nvim.desktop
+
+image/png=feh.desktop
+image/svg=feh.desktop
+image/jpg=feh.desktop
+text/html=nvim.desktop
+x-scheme-handler/mailspring=mailspring.desktop

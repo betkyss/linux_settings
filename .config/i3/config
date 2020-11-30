@@ -1,0 +1,241 @@
+#Mod key
+set $mod Mod4
+
+#Auto starting
+#System
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id nm-applet
+# My
+exec --no-startup-id mailspring
+exec --no-startup-id picom
+exec --no-startup-id compton
+exec setxkbmap "us,ru" ",winkeys" "grp:alt_shift_toggle"
+exec xset b off
+exec synclient TouchpadOff=1
+exec --no-startup-id flameshot
+exec --no-startup-id alacritty
+exec --no-startup-id feh --bg-max BackgroundDesktop/bg3.jpg
+
+exec --no-startup-id xmodmap -e "keysym Menu = F13"
+
+#Binding
+bindsym $mod+KP_Multiply exec amixer sset Master toggle
+bindsym $mod+KP_Subtract exec amixer sset Master 5%- 
+bindsym $mod+KP_Add exec amixer sset Master 5%+
+bindsym $mod+t border toggle   
+bindsym $mod+Tab focus right
+bindsym $mod+Shift+Tab focus left
+# bindsym Mod2+t exec xdotool key Mod4 + Return
+
+  # 0xe0 0x5d
+#Start program bind
+#bindsym $mod+F1 exec --no-startup-id vivaldi-stable 
+bindsym $mod+F1 exec --no-startup-id chromium 
+bindsym $mod+F2 exec --no-startup-id alacritty -e zsh -c "nvim" 
+# bindsym $mod+F2 exec --no-startup-id phpstorm 
+bindsym $mod+F3 exec --no-startup-id avocode 
+bindsym $mod+F4 exec --no-startup-id alacritty -e ranger
+bindsym $mod+F10 exec --no-startup-id mate-system-monitor
+bindsym $mod+F11 exec --no-startup-id colorgrab
+bindsym $mod+F12 exec --no-startup-id galculator 
+bindsym Print exec --no-startup-id flameshot gui
+
+#Open window for desktop
+#for_window [class="Vivaldi"] move to workspace $ws1 
+for_window [class="Chromium"] move to workspace $ws1 
+# for_window [class="phpstorm"] move to workspace $ws2 
+for_window [title="Avocode"] move to workspace $ws3 
+for_window [title="Figma"] move to workspace $ws3 
+for_window [class="Filezilla"] move to workspace $ws3 
+for_window [title="Adobe Photoshop CC 2018"] move to workspace $ws4 
+for_window [class="Gimp"] move to workspace $ws4 
+for_window [class="Telegram"] move to workspace $ws5 
+for_window [title="WhatsApp"] move to workspace $ws5 
+for_window [class="Youtube"] move to workspace $ws5 
+for_window [title="Mailspring"] move to workspace $ws6 
+for_window [class="Steam"] move to workspace $ws7 
+for_window [class="tlauncher"] move to workspace $ws7 
+for_window [class="Minecraft"] move to workspace $ws7 
+
+#Opened floating window
+for_window [class="Galculator"] floating enable
+for_window [title="ColorGrab"] floating enable
+for_window [class="Mate-system-monitor"] floating enable
+for_window [title="Adobe Photoshop CC 2018"] floating enable
+for_window [class="Yad" title="yad-calendar"] floating enable
+
+#Auto open window
+for_window [urgent="latest"] focus
+focus_on_window_activation focus
+
+#Set name for desktop
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# switch to workspace
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+#Enable title
+default_border pixel
+for_window [class="^.*"] border pixel 2
+
+#Color border window
+# class                 border  backgr. text    indicator child_border
+client.focused          #1E2127 #1E2127 #AFAFAF #1E2127   #2E3440
+# client.focused_inactive #1E2127 #1E2127 #AFAFAF #1E2127   #1E2127
+# client.unfocused        #1E2127 #1E2127 #AFAFAF #1E2127   #1E2127
+# client.urgent           #1E2127 #1E2127 #AFAFAF #1E2127   #1E2127
+# client.placeholder      #1E2127 #1E2127 #AFAFAF #1E2127   #1E2127
+
+client.background       #ffffff
+
+#If open one window, window no border
+smart_gaps on
+
+#Indent between windows
+gaps inner 6 
+
+#Enable smart framework, if opened one window then smart framwork disable
+smart_borders on
+
+#Set font
+font pango:monospace 8
+
+#Polybar launch script
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+#--------------------------------------------
+# Use pactl to adjust volume in PulseAudio.
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+# Move floating window (Mouse+$mod)
+floating_modifier $mod
+
+# start a terminal
+# bindsym $mod+Return exec alacritty -e zsh -c "tmux" 
+bindsym $mod+Return exec alacritty 
+
+# bindsym $mod+Return exec i3-sensible-terminal
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# start searc-menu (a program launcher)
+#bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec rofi -show run -theme ~/.config/rofi/example
+
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+b split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# resize window
+mode "resize" {
+				#Open resize mod
+        bindsym h resize shrink width 5 px or 5 ppt
+        bindsym j resize grow height 5 px or 5 ppt
+        bindsym k resize shrink height 5 px or 5 ppt
+        bindsym l resize grow width 5 px or 5 ppt
+				#--------------
+        bindsym Left resize shrink width 5 px or 5 ppt
+        bindsym Down resize grow height 5 px or 5 ppt
+        bindsym Up resize shrink height 5 px or 5 ppt
+        bindsym Right resize grow width 5 px or 5 ppt
+				#Open default mod
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+#bar {
+#        status_command i3status 
+#				position top
+#				tray_output none
+#}

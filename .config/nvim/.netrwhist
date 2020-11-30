@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/home/betkys/.config/nvim/themes'
+let g:netrw_dirhist_3='/home/betkys/.config/nvim/vim-plug'
+let g:netrw_dirhist_2='/home/betkys/.config'
+let g:netrw_dirhist_1='/home/betkys/.config/nvim'
+let g:netrw_dirhist_0='/home/betkys/.config/nvim/vim-plug'
+let g:netrw_dirhist_9='/home/betkys/.config/nvim/general'
+let g:netrw_dirhist_8='/home/betkys/.config'
+let g:netrw_dirhist_7='/home/betkys/.config/nvim/vim-plug'
+let g:netrw_dirhist_6='/home/betkys'
+let g:netrw_dirhist_5='/home/betkys/.config'
