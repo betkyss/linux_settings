@@ -43,6 +43,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'tpope/vim-commentary'
     " Colorizer
     Plug 'norcalli/nvim-colorizer.lua' 
+    Plug 'altercation/vim-colors-solarized'
     " Rainbow pairs
     Plug 'junegunn/rainbow_parentheses.vim' 
     " Icon

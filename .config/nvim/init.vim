@@ -5,8 +5,10 @@ source $HOME/.config/nvim/general/leader.vim
 source $HOME/.config/nvim/general/nohlsearch.vim
 source $HOME/.config/nvim/general/smart_enter.vim
 source $HOME/.config/nvim/general/tabs.vim
+source $HOME/.config/nvim/general/folding.vim
 source $HOME/.config/nvim/general/move_window.vim
 
+" source $HOME/.config/nvim/themes/solarized.vim
 source $HOME/.config/nvim/themes/onedark.vim
 source $HOME/.config/nvim/themes/airline.vim
 
